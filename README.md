@@ -14,8 +14,8 @@
 
     - ## HTML Form - know how to make a working HTML Form from scratch
         -The `<label>` element has a `for` attribute that associates the `<label>` with a specific `<input>` element. 
-            - The `for` attribute’s value should match that of the `<input>` element’s `id` value. 
-            - `<label>` elements are useful as they allow your `<input>` elements to be identified by screen readers.
+        - The `for` attribute’s value should match that of the `<input>` element’s `id` value. 
+        - `<label>` elements are useful as they allow your `<input>` elements to be identified by screen readers.
 
 - # CSS
 
