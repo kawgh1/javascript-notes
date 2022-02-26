@@ -78,17 +78,17 @@
         - Updating car did not affect secondCar. Object.assign takes a target object as the first argument, and a source as the second one. In our example, we used an empty Object as our target and our car as the source.
 
         - ## Object instance methods
-            - `hasOwnProperty()`
+            - #### `hasOwnProperty()`
                 - Indicates if the given property specified in the function argument exists on the `object` instance( and not on the `prototype`).
-            -`isPrototypeOf()`
+            - #### `isPrototypeOf()`
                 - Checks whether the `object` specified in the argument is a `prototype` of another `object`.
-            -`propertyIsEnumerable()`
+            - #### `propertyIsEnumerable()`
                 - Indicates if the given property specified in the argument can be enumerated using the for-in statement.
-            -`toLocaleString()`
+            - #### `toLocaleString()`
                 - Returns a string representation of the `object` that is appropriate for the locale of execution context.
-            `toString()`
+            - #### `toString()`
                 - Returns a string representation of the `object`.
-            -`valueOf()`
+            - #### `valueOf()`
                 - Returns a string, number or Boolean equivalent of te `object`. It often returns the same value as `toString()`
 
     - ## Javascript Arrays
