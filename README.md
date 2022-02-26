@@ -28,12 +28,13 @@
         - It guarantees that the content box of an element shrinks to make space for the padding and borders. Therefore, if you set your element width to 200 pixels, `border-box` makes sure that the content, padding, and borders fit in this number.
 
 
-            // base styling
-           ` * {
-                box-sizing: border box;
-                margin: 0;
-                padding: 0;
-            }`
+
+                    // base styling
+                ` * {
+                        box-sizing: border box;
+                        margin: 0;
+                        padding: 0;
+                    }`
 
     - ## CSS GRID
         - ### In general, use CSS GRID for the overall page layout and large page components and Flexbox for smaller UI components
