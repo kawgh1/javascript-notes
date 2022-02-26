@@ -13,27 +13,27 @@
 - # HTML
 
     - ## HTML Form - know how to make a working HTML Form from scratch
-
-        -The `<label>` element has a for attribute that associates the `<label>` with a specific `<input>` element. 
-            - The for attribute’s value should match that of the `<input>` element’s `id` value. 
+        -The `<label>` element has a `for` attribute that associates the `<label>` with a specific `<input>` element. 
+            - The `for` attribute’s value should match that of the `<input>` element’s `id` value. 
             - `<label>` elements are useful as they allow your `<input>` elements to be identified by screen readers.
 
 - # CSS
 
     - ## CSS Pseudo-class - its just things like `link a:hover` or `p:first-child`
 
-    - ## border-box model - content, padding, border, margin
+    - ## `border-box` model - content, padding, border, margin
 
-    - ## What is the box sizing border-box?
+    - ## What is the `box sizing: border-box;`?
         - it's a way of standardizing how CSS interacts with HTML elements
         - It guarantees that the content box of an element shrinks to make space for the padding and borders. Therefore, if you set your element width to 200 pixels, `border-box` makes sure that the content, padding, and borders fit in this number.
 
+
             // base styling
-            * {
+           ` * {
                 box-sizing: border box;
                 margin: 0;
                 padding: 0;
-            }
+            }`
 
     - ## CSS GRID
         - ### In general, use CSS GRID for the overall page layout and large page components and Flexbox for smaller UI components
@@ -97,8 +97,9 @@
 
     - ## Escaping Characters 
         - uses a backslash \
-
-        - let twosentences = "cat dog \n dog cat" // new line
+            - include quotes in string
+            - let quote = "\"Stay Awesome"\"; // "Stay Awesome"
+        - let twosentences = "cat dog \n dog cat";  // new line
 
     - ## `null` vs. `undefined` 
         - `null` is the value of no value
