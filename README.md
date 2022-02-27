@@ -181,3 +181,73 @@
 
         - We made the argument of our function an object. When calling the function, we don’t even have to worry about the order of the parameters because they are matched based on their key.
         -   In the example above, the default value for tip was 0.05, and we overwrote it with 0.15. But we didn’t give a value to tax which remained the default 0.1.
+
+    - ## String Methods
+        - ### `startsWith()`
+        - ### `endsWith()`
+        - ### `includes()`
+        - ### `repeat()`
+
+
+    - ## Exercise 1
+        -   Check the following code snippet riddle:
+
+        -   Determine the values logged to the console before you execute it.
+
+
+                    'use strict';
+
+                    var guessMe1 = 1;
+                    let guessMe2 = 2;
+
+                    {
+                    
+                        try {
+                            console.log( guessMe1, guessMe2 ); // (A) 1, error - guessMe2 was never initialized
+                        } catch(err) {
+                            console.log("Error");
+                        }
+                        
+                        let guessMe2 = 3;
+                        console.log( guessMe1, guessMe2 ); // (B) 1, 3
+                    }
+
+                    console.log( guessMe1, guessMe2 ); // (C) 1, 2
+
+                    const print_func = () => {
+
+                        console.log( guessMe1 ); // (D) since function is never called, this never runs
+                        var guessMe1 = 5;
+                        let guessMe2 = 6;
+                        console.log( guessMe1, guessMe2 ); // (E) since function is never called, this never runs
+                    };
+
+
+                    console.log( guessMe1, guessMe2 ); // (F) 1, 2
+
+
+        - Let’s examine the six console logs one by one.
+
+            -   (A): Here, guessMe1 holds the value original value of 1 as it has not been defined again in the block. The error is thrown because of guessMe2. Why? This is because we have defined it with the let keyword in line 14 of the block:
+
+            -   let guessMe2 = 3;
+            -   If we remove the try method and simply print line 9:
+
+            -   console.log( guessMe1, guessMe2 );
+            -   an error will still tell you that guessMe2 is uninitialized. Hence Error was the first output.
+
+            -   (B): This console.log() will work because now
+
+            -   guessMe1 == 1 and guessMe2 == 3.
+
+            -   However, keep in mind that these values are only true for this particular block.
+
+            -   (C): This will print the original values of both variables as we have moved outside the scope of the block above.
+
+            -   guessMe1 == 1 and guessMe2 == 2.
+
+            -   (D): The print_func function is never called in the program, hence its contents never run.
+
+            -   (E): Just as for (D), the print_func function is never called in the program, hence its contents never run.
+
+            -   (F): The console.log in this line is the same as that in (C). The values of both variables have not been altered anywhere in the global scope. Hence, the output is the same.
