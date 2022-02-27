@@ -251,3 +251,35 @@
             -   (E): Just as for (D), the print_func function is never called in the program, hence its contents never run.
 
             -   (F): The console.log in this line is the same as that in (C). The values of both variables have not been altered anywhere in the global scope. Hence, the output is the same.
+
+
+                    'use strict';
+
+                    var guessMe1 = 1;
+                    let guessMe2 = 2;
+
+                    {
+                        
+                        try {
+                            let guessMe2 = 3;
+                            console.log( guessMe1, guessMe2 ); // (A) 1, 3
+                        } catch(err){console.log("Error");}
+                        
+                        let guessMe2 = 3;
+                        console.log( guessMe1, guessMe2 ); // (B) 1, 3
+                    }
+
+                    console.log( guessMe1, guessMe2 ); // (C) 1, 2
+
+                    const print_func = () => {
+                        var guessMe1 = 5;
+                        console.log( guessMe1 ); // (D) 5
+                        
+                        let guessMe2 = 6;
+                        console.log( guessMe1, guessMe2 ); // (E) 5, 6
+                    };
+
+                    print_func();
+
+
+                    console.log( guessMe1, guessMe2 ); // (F) 1, 2
