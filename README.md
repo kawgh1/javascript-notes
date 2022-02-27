@@ -283,3 +283,68 @@
 
 
                     console.log( guessMe1, guessMe2 ); // (F) 1, 2
+
+    - ## Higher Order Functions
+
+        - ### Array Method `.reduce()`
+            - The `.reduce()` method iterates through an array and returns a single value.
+            -   It takes a callback function with two parameters (`accumulator`, `currentValue`) as arguments. On each iteration, `accumulator` is the value returned by the last iteration, and the `currentValue` is the current element. Optionally, a second argument can be passed which acts as the initial value of the `accumulator`.
+            - Here, the `.reduce()` method will sum all the elements of the array.
+
+
+                    const array = [1, 2, 3, 4];
+ 
+                    const sum = array.reduce((accumulator, currentValue) => {  
+                        
+                        return accumulator + currentValue;
+                    });
+                    
+                    console.log(sum); // 10
+
+    - ### Array Method `.forEach()`
+        -   The `.forEach()` method executes a callback function on each of the elements in an array in order.
+        -   Here, the callback function containing a console.log() method will be executed 5 times, once for each element.
+
+
+                const numbers = [28, 77, 45, 99, 27];
+ 
+                numbers.forEach(number => {  console.log(number);  }); 
+
+                // 28
+                // 77
+                // 45
+                // 99
+                // 27
+
+
+    - ### Array Method `.filter()`
+        -   The `.filter()` method executes a callback function on each element in an array. The callback function for each of the elements must return either true or false. The returned array is a new array with any elements for which the callback function returns true.
+        -   Here, the array filteredArray will contain all the elements of randomNumbers but 4.
+
+
+                const numArr = [4, 11, 42, 14, 39];
+
+                const filteredArray = numArr.filter(num => { return num > 5; });
+
+                // 11, 42, 14, 39
+
+    - ### Array Method `.map()`
+        -   The `.map()` method executes a callback function on each element in an array. It returns a new array made up of the return values from the callback function.
+        -   The original array does not get altered, and the returned array may contain different elements than the original array.
+
+
+                const finalParticipants = ['Taylor', 'Donald', 'Don', 'Natasha', 'Bobby'];
+ 
+                const announcements = finalParticipants.map(member => { return member + ' joined the contest.'; })
+                
+                console.log(announcements);
+
+                // [
+                        'Taylor joined the contest.',
+                        'Donald joined the contest.',
+                        'Don joined the contest.',
+                        'Natasha joined the contest.',
+                        'Bobby joined the contest.'
+                    ]
+
+                
