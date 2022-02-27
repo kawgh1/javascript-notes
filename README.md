@@ -118,4 +118,66 @@
         - `null` is the value of no value
         - `undefined` means a variable has only been initialized or declared but no value assigned
 
+    - ## Arrow Functions () => {}
 
+        - ### Arrow function and the `this` keyword
+            -   Be careful when using arrow functions with the `this` keyword, as they behave differently from normal functions.
+            -   **When using an arrow function, the `this` keyword is inherited from the ***parent scope.***
+            -   Practice using `this` in object and function creation
+        - ### The `arguments` object cannot be accessed on an arrow function
+            -   Another difference between arrow functions and normal functions is the access to the arguments object. The arguments object is an array-like object that we can access from inside functions and contains the values of the arguments passed to that function.
+            - However, `arguments` can be access in arrow functions using the spread `...` operator
+            
+
+                    const showWinner = (...args) => {
+                    const winner = args[0];
+                    console.log(`${winner} was the winner`)
+                    }
+                    showWinner("Usain Bolt", "Justin Gatlin", "Asafa Powell" )
+                    // "Usain Bolt was the winner"
+
+    - ## Default Function Arguments
+        - prior to ES6 if you had a method that took three arguments and you were only passing it one of the arguments,
+            it would error out and say cannot access `undefined`
+        - So you had to pass `undefined` as an argument to the function for it to run
+
+                function getLocation(continent,country,city){
+                    if(typeof country === 'undefined'){
+                        country = 'Italy'
+                    }
+                    if(typeof continent === 'undefined'){
+                        continent = 'Europe'
+                    }
+                    console.log(continent,country,city)
+                }
+
+                getLocation(undefined, undefined,'Milan')
+                // Europe Italy Milan
+
+                getLocation(undefined,'Paris','France')
+                // Europe Paris France
+
+
+        - ES6 makes it very easy to set default function arguments. Let’s look at an example:
+
+                function calculatePrice(total, tax = 0.1, tip = 0.05){
+                    // When no value is given for tax or tip, the default 0.1 and 0.05 will be used
+                    return total + (total * tax) + (total * tip);
+                }
+        - If you only provided two arguments, it would default the second argument to `tax` even if you meant it to be the `tip` argument
+        - to get around that you can pass, in order `calculatePrice(20, undefined, 0.10)` to use the default `tax` value
+        - or you can use desctructuring
+
+
+                function calculatePrice({
+                    total = 0,
+                    tax = 0.1,
+                    tip = 0.05} = {} ){
+                    console.log(total + (total * tax) + (total * tip));
+                }
+
+                const bill = calculatePrice({ tip: 0.15, total:150 });
+                // 187.5
+
+        - We made the argument of our function an object. When calling the function, we don’t even have to worry about the order of the parameters because they are matched based on their key.
+        -   In the example above, the default value for tip was 0.05, and we overwrote it with 0.15. But we didn’t give a value to tax which remained the default 0.1.
